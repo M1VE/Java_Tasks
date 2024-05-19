@@ -6,6 +6,15 @@ public class BigIntegerCalculator {
     private List<Integer> number;
 
     public BigIntegerCalculator(String number) {
+        if (!number.matches("\\d+")) {
+            throw new IllegalArgumentException("Input contains non-numeric characters");
+        }
+        number = number.replaceAll(" ", "");
+
+        while (number.length() > 1 && number.charAt(0) == '0') {
+            number = number.substring(1);
+        }
+
         this.number = new ArrayList<>();
         for (int i = 0; i < number.length(); i++) {
             this.number.add(Character.getNumericValue(number.charAt(i)));
@@ -151,7 +160,7 @@ public class BigIntegerCalculator {
     }
 
     public static void main(String[] args) {
-        BigIntegerCalculator num1 = new BigIntegerCalculator("12345678901234567890");
+        BigIntegerCalculator num1 = new BigIntegerCalculator("0012345678901234567890");
         BigIntegerCalculator num2 = new BigIntegerCalculator("98765432109876543210");
 
         System.out.println("Addition: " + num1.add(num2));
