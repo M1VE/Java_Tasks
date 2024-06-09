@@ -1,5 +1,4 @@
-package Tasks.lab1;// Код добавляющий в новый список 3 данные 2 списка и добавляющий
-// неповторяющиеся числа в 1 и во 2 списке в 3 список.
+package Tasks.lab1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
