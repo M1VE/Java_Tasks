@@ -13,12 +13,10 @@ public class Task1 {
         Map<Integer, Integer> countMap = new HashMap<>();
         List<Integer> result = new ArrayList<>();
 
-        // Подсчет количества повторений каждого числа
         for (int num : numbers) {
             countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         }
 
-        // Добавление чисел с четным количеством повторений в результат
         for (int num : numbers) {
             if (countMap.get(num) % 2 == 0) {
                 result.add(num);
